@@ -1,0 +1,19 @@
+name: dlp
+
+base:
+  ubuntu: 16.04
+  ros: kinetic-desktop-full
+  opengl: runtime
+
+build: catkin_build
+
+apt:
+  - ros-kinetic-mavros 
+  - ros-kinetic-mavros-extras
+
+custom:
+  - wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+  - bash ./install_geographiclib_datasets.sh
+  - wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim.sh
+  - bash ubuntu_sim.sh
+

@@ -1,0 +1,14 @@
+name: dlp
+
+base:
+  ubuntu: 16.04
+  ros: kinetic-desktop-full
+  opengl: runtime
+
+custom:
+  - cd $HOME/dlp/glpk-4.61
+  - ./configure
+  - make check
+  - make install
+  - cd ..
+  - make testDLP
